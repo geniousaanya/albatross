@@ -3,7 +3,8 @@ cd $MAVEN_PROJECT
 TOMCAT_DIR='/opt/tomcat/webapps'
 git clone $GIT_URL .
 mvn clean install
-cp -rf $MAVEN_PROJECT/target/*.war $TOMCAT_DIR
+sudo cp -rf $MAVEN_PROJECT/target/*.war $TOMCAT_DIR
+sudo chmod -R 775 $TOMCAT_DIR
 ps -ef | grep tomcat
 cd $TOMCAT_DIR/../bin
 ./shutdown.sh && ./startup.sh
