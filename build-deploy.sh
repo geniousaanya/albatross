@@ -6,6 +6,6 @@ mvn clean install
 sudo cp -rf $MAVEN_PROJECT/target/*.war $TOMCAT_DIR
 sudo chmod -R 775 $TOMCAT_DIR
 ps -ef | grep tomcat
-cd $TOMCAT_DIR/../bin
+sudo cd $TOMCAT_DIR/../bin
 ./shutdown.sh && ./startup.sh
 ps -ef | grep tomcat
